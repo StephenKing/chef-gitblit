@@ -28,9 +28,8 @@ application "gitblit" do
   path "/var/lib/tomcat6/webapps"
   owner "tomcat6"
   group "tomcat6"
-
-  repository "http://gitblit.googlecode.com/files/gitblit-1.0.0.war"
-  revision "6facd94e958ecf68ffd28be371b5efcb5584c885b5f32a906e477f5f62bdb518-1"
+  repository "git://github.com/gitblit/gitblit.git"
+  revision "1.0.0"
 
   java_webapp do
     context_template "context.xml.erb"
