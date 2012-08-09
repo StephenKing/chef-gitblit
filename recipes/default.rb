@@ -31,10 +31,10 @@ application "gitblit" do
 
   repository "http://gitblit.googlecode.com/files/gitblit-1.0.0.war"
   revision "6facd94e958ecf68ffd28be371b5efcb5584c885b5f32a906e477f5f62bdb518-1"
-  
-  java_webapp "gitblit" do
+
+  java_webapp do
     context_template "context.xml.erb"
   end
-  
+
   tomcat
 end
