@@ -24,16 +24,24 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-application "gitblit" do
-  path "/var/lib/tomcat6/webapps"
+directory "/tmp/webapps/gitblit" do
   owner "tomcat6"
   group "tomcat6"
-  repository "git://github.com/gitblit/gitblit.git"
-  revision "1.0.0"
+  recursive true
+end
 
-  java_webapp do
-    context_template "context.xml.erb"
-  end
+application "gitblit" do
+  path "/tmp/webapps/gitblit"
+  owner "tomcat6"
+  group "tomcat6"
 
+#  repository "git://github.com/gitblit/gitblit.git"
+#  revision "master"
+
+  repository "http://gitblit.googlecode.com/files/gitblit-1.0.0.war"
+  revision "be46d9bad598e658b5e48135ba1b19674d70447c511ff878286d388577618ba3"
+
+  java_webapp
+  
   tomcat
 end
