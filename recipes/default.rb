@@ -24,12 +24,6 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-directory "/tmp/webapps/gitblit" do
-  owner "tomcat6"
-  group "tomcat6"
-  recursive true
-end
-
 application "gitblit" do
   path "/tmp/webapps/gitblit"
   owner "tomcat6"
